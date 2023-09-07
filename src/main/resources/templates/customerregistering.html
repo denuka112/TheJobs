@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <style>
+        .cascading-right {
+            margin-right: -50px;
+        }
+
+        @media (max-width: 991.98px) {
+            .cascading-right {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!--        Sign Up form Start-->
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+
+    <!-- Jumbotron -->
+    <div class="container mx-auto py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+                             background: hsla(0, 0%, 100%, 0.55);
+                             backdrop-filter: blur(30px);
+                             ">
+                    <div class="card-body p-5 frm shadow-5 text-center">
+                        <h2 class="fw-bold mb-5">Sign up now</h2>
+                        <form th:action="@{/register}" th:object="${User}" method="post">
+                            <!-- Full Name -->
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">Your Full name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-outline">
+                                        <input type="text" id="cname" class="form-control" th:field="*{username}" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Password input -->
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">Password</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-outline">
+                                        <input type="password" id="cpassword" class="form-control" th:field="*{cpassword}" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">Type</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-outline">
+                                        <input type="text" id="ctype" class="form-control" th:field="*{type}" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Submit button -->
+                            <div class="row">
+                                <div class="d-grid gap-2 col-5 mx-auto ml-auto">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Sign up
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+</section>
+<!-- Section: Design Block -->
+<!--Sign Up form End-->
+</body>
+
+
+</html>
